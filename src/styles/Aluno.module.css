@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  padding: 24px;
+  font-size: 13px;
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.busca {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.busca input {
+  flex: 1;
+  padding: 8px;
+  font-size: 13px;
+  margin-right: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.tabela th,
+.tabela td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tabela th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
