@@ -1,0 +1,18 @@
+.card {
+  background-color: #e0e7ff;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  width: 120px;
+}
+
+.card strong {
+  font-size: 18px;
+  display: block;
+  color: #4c1d95;
+}
+
+.card span {
+  font-size: 12px;
+  color: #333;
+}

@@ -1,0 +1,49 @@
+/* Home */
+.home-hero {
+  background: linear-gradient(135deg, #1f7a8c, #88c0d0);
+  color: #fff;
+  padding: 32px;
+  border-radius: 12px;
+}
+
+/* Aluno */
+.aluno-header { background: #f0f8ff; padding: 24px; border-left: 6px solid #1f7a8c; }
+.aluno-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }
+.aluno-card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 16px; }
+.aluno-card:hover { border-color: #1f7a8c; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+/* Professor */
+.prof-header { background: #fff3e6; padding: 24px; border-left: 6px solid #ff8c42; }
+.prof-actions { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.prof-primary { background: #ff8c42; color: #fff; border: none; padding: 12px 16px; border-radius: 8px; }
+.prof-secondary { background: #fff; border: 1px solid #ff8c42; color: #ff8c42; padding: 12px 16px; border-radius: 8px; }
+
+/* Documento */
+.doc-header { background: #eaf6ff; padding: 20px; border-left: 6px solid #2a9d8f; }
+.doc-form { display: grid; gap: 10px; max-width: 420px; margin-top: 16px; }
+.doc-download { background: #2a9d8f; color: #fff; border: none; padding: 10px 14px; border-radius: 8px; }
+
+/* Disciplina */
+.disc-header { background: #e8f5e9; padding: 24px; border-left: 6px solid #2e7d32; }
+.disc-list { margin-top: 12px; padding-left: 18px; }
+.disc-list li { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 8px; }
+
+/* Turma */
+.turma-header { background: #e0f7fa; padding: 24px; border-left: 6px solid #264653; }
+
+/* Curso */
+.curso-header { background: #f3e5f5; padding: 24px; border-left: 6px solid #6a4c93; }
+
+/* Avaliação */
+.avaliacao-header { background: #ffebee; padding: 24px; border-left: 6px solid #d7263d; }
+
+/* Pagamento */
+.pag-header { background: #fffde7; padding: 24px; border-left: 6px solid #c59a00; }
+
+/* Matrícula */
+.matricula-header { background: #e3f2fd; padding: 24px; border-left: 6px solid #1976d2; }
+
+/* Faculdades */
+.fac-header { background: #eeeeee; padding: 24px; border-left: 6px solid #555; }
+
+
