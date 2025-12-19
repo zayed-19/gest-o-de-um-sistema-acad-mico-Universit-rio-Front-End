@@ -1,7 +1,6 @@
 import styles from "../styles/Pagamento.module.css";
 import Titulo from "../components/Titulo";
 import Card from "../components/Card";
-import Botao from "../components/Botao";
 import Estatistica from "../components/Estatistica";
 
 export default function Pagamento() {
