@@ -1,0 +1,134 @@
+/* ================= CONTAINER ================= */
+.container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #e9fff3, #e6fff9);
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= STATS ================= */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* ================= BUSCA ================= */
+.busca {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.busca input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ================= MÉTODOS ================= */
+.metodos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metodo {
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.metodo strong {
+  display: block;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.metodo span {
+  font-size: 13px;
+  color: #16a34a;
+}
+
+/* ================= TABELA ================= */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabela thead {
+  background: #059669;
+  color: #fff;
+}
+
+.tabela th,
+.tabela td {
+  padding: 14px;
+  text-align: left;
+}
+
+.tabela tbody tr:nth-child(odd) {
+  background: #ecfdf5;
+}
+
+.tabela tbody tr:nth-child(even) {
+  background: #ffffff;
+}
+
+.valor {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* ================= STATUS ================= */
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.pago {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.pendente {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+.atrasado {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .busca {
+    flex-direction: column;
+  }
+
+  .tabela {
+    font-size: 13px;
+  }
+
+  .tabela th,
+  .tabela td {
+    padding: 10px;
+  }
+}

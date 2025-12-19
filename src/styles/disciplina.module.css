@@ -1,0 +1,227 @@
+/* ===== Página ===== */
+.container {
+  width: 100%;
+  padding: 24px;
+  background-color: #fefce8;
+  font-size: 14px;
+}
+
+/* ===== Cabeçalho ===== */
+.headerPage {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.headerIcon {
+  background-color: #f59e0b;
+  color: #fff;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.headerText h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.headerText p {
+  font-size: 14px;
+  color: #d97706;
+}
+
+/* ===== Estatísticas ===== */
+.statsResumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid;
+}
+
+.statCard h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.statCard strong {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Cores individuais */
+.total { border-color: #f59e0b; color: #92400e; }
+.carga { border-color: #2563eb; color: #1e40af; }
+.creditos { border-color: #16a34a; color: #065f46; }
+.alunos { border-color: #9333ea; color: #6b21a8; }
+
+/* ===== Barra de busca ===== */
+.buscaCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.busca {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.busca input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.novoBtn {
+  background-color: #d97706;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.novoBtn:hover {
+  background-color: #b45309;
+}
+
+/* ===== Grid de disciplinas ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+/* ===== Card da disciplina ===== */
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Cabeçalho do card */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardLeft {
+  display: flex;
+  gap: 12px;
+}
+
+.icon {
+  background-color: #fef3c7;
+  color: #f59e0b;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.codigo {
+  background-color: #fef3c7;
+  color: #f59e0b;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 8px;
+  width: fit-content;
+  margin-bottom: 6px;
+}
+
+.titulo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.curso {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Ações */
+.acoes {
+  display: flex;
+  gap: 10px;
+}
+
+.editar {
+  color: #f59e0b;
+  cursor: pointer;
+}
+
+.excluir {
+  color: #ef4444;
+  cursor: pointer;
+}
+
+/* ===== Estatísticas do card ===== */
+.cardStats {
+  background-color: #fffbeb;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.stat strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f59e0b;
+}
+
+/* ===== Professor ===== */
+.professor {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+  font-size: 13px;
+}
+
+.professor span {
+  color: #6b7280;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.professor strong {
+  color: #111827;
+}

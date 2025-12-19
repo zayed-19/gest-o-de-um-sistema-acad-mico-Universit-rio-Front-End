@@ -1,0 +1,266 @@
+/* Container principal */
+.container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #eef2ff, #e0f7ff);
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= HEADER ================= */
+.headerPage {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.headerIcon {
+  width: 42px;
+  height: 42px;
+  background: #0ea5e9;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.headerText h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.headerText p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ================= STATS ================= */
+.statsResumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  border-left: 5px solid transparent;
+}
+
+.statCard h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.statCard strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 26px;
+}
+
+/* Cores individuais */
+.total {
+  border-color: #0ea5e9;
+}
+
+.cursos {
+  border-color: #2563eb;
+}
+
+.alunos {
+  border-color: #16a34a;
+}
+
+.professores {
+  border-color: #9333ea;
+}
+
+/* ================= BUSCA ================= */
+.buscaCard {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.busca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #64748b;
+}
+
+.busca input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+}
+
+.novoBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.novoBtn:hover {
+  background: #0284c7;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+/* ================= CARD ================= */
+.card {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Header do card */
+.cardHeader {
+  background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+  padding: 18px;
+  color: #fff;
+}
+
+.cardLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ================= INFO ================= */
+.info {
+  padding: 16px 18px 0;
+}
+
+.info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* ================= STATS DO CARD ================= */
+.cardStats {
+  display: flex;
+  gap: 12px;
+  padding: 16px 18px;
+}
+
+.stat {
+  flex: 1;
+  background: #f0f9ff;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat svg {
+  color: #0284c7;
+}
+
+.stat span {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+/* ================= COORDENADOR ================= */
+.coordenador {
+  padding: 0 18px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.coordenador span {
+  display: block;
+  color: #64748b;
+}
+
+.coordenador strong {
+  color: #0f172a;
+}
+
+/* ================= BOTÃO ================= */
+.detalhesBtn {
+  margin: 16px 18px 18px;
+  width: calc(100% - 36px);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #0ea5e9;
+  background: transparent;
+  color: #0ea5e9;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.detalhesBtn:hover {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .buscaCard {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

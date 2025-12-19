@@ -12,10 +12,10 @@ export default function Aluno() {
       {/* Estatísticas */}
       <Card>
         <div className={styles.stats}>
-          <Estatistica label="Total de Alunos" valor={5} />
-          <Estatistica label="Ativos" valor={5} />
-          <Estatistica label="Novos este mês" valor={12} />
-          <Estatistica label="Formandos" valor={8} />
+          <Estatistica label="Total de Alunos" valor="5" />
+          <Estatistica label="Ativos" valor="5" />
+          <Estatistica label="Novos este mês" valor="12" />
+          <Estatistica label="Formandos" valor="8" />
         </div>
       </Card>
 
