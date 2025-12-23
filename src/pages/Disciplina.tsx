@@ -106,7 +106,7 @@ export default function Disciplina() {
       {/* Grid de disciplinas */}
       <div className={styles.grid}>
         {disciplinas.map((disciplina) => (
-          <Card key={disciplina.codigo} className={styles.card}>
+          <Card key={disciplina.codigo} className={styles.container}>
             {/* Cabeçalho do card */}
             <div className={styles.cardHeader}>
               <div className={styles.cardLeft}>

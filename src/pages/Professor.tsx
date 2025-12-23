@@ -44,10 +44,10 @@ export default function ProfessorPage() {
         </div>
 
         <div className={styles.summary}>
-          <Estatistica label="Total de Professores" valor={5} />
-          <Estatistica label="Doutores" valor={4} />
-          <Estatistica label="Mestres" valor={1} />
-          <Estatistica label="Disciplinas Ativas" valor={22} />
+          <Estatistica label="Total de Professores" valor="5" />
+          <Estatistica label="Doutores" valor="4" />
+          <Estatistica label="Mestres" valor="1" />
+          <Estatistica label="Disciplinas Ativas" valor="22" />
         </div>
 
         <input
