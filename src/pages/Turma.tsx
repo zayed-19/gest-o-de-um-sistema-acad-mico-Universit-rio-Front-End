@@ -4,14 +4,26 @@ import Card from "../components/Card";
 import Botao from "../components/Botao";
 import Estatistica from "../components/Estatistica";
 
+interface Turma {
+  id: number;
+  disciplina: string;
+  codigo: string;
+  periodo: string;
+  horario: string;
+  local: string;
+  professor: string;
+  ocupadas: number;
+  total: number;
+}
+
 export default function Turmas() {
-  const turmas = [
+  const turmas: Turma[] = [
     {
       id: 1,
       disciplina: "Algoritmos e Estruturas de Dados",
       codigo: "ENG-2024-4A",
       periodo: "2024.2",
-      horario: "Seg/Qua 19:00 - 21:00",
+      horario: "Seg/Qua 19:00-21:00",
       local: "Lab 101",
       professor: "Dr. João Pedro Almeida",
       ocupadas: 45,
@@ -22,7 +34,7 @@ export default function Turmas() {
       disciplina: "Direito Constitucional",
       codigo: "DIR-2024-6B",
       periodo: "2024.2",
-      horario: "Ter/Qui 14:00 - 16:00",
+      horario: "Ter/Qui 14:00-16:00",
       local: "Sala 205",
       professor: "Dra. Maria Fernanda Costa",
       ocupadas: 38,
@@ -33,7 +45,7 @@ export default function Turmas() {
       disciplina: "Gestão de Pessoas",
       codigo: "ADM-2024-2A",
       periodo: "2024.2",
-      horario: "Qua/Sex 20:00 - 22:00",
+      horario: "Qua/Sex 20:00-22:00",
       local: "Sala 310",
       professor: "Me. Roberto Carlos Santos",
       ocupadas: 42,
@@ -44,7 +56,7 @@ export default function Turmas() {
       disciplina: "Psicologia do Desenvolvimento",
       codigo: "PSI-2024-5A",
       periodo: "2024.2",
-      horario: "Seg/Qua 08:00 - 10:00",
+      horario: "Seg/Qua 08:00-10:00",
       local: "Sala 110",
       professor: "Dra. Ana Paula Rodrigues",
       ocupadas: 35,
@@ -52,8 +64,8 @@ export default function Turmas() {
     },
   ];
 
-  const totalVagas = turmas.reduce((acc, t) => acc + t.total, 0);
-  const vagasOcupadas = turmas.reduce((acc, t) => acc + t.ocupadas, 0);
+  const totalVagas = turmas.reduce((a, t) => a + t.total, 0);
+  const vagasOcupadas = turmas.reduce((a, t) => a + t.ocupadas, 0);
 
   return (
     <section className={styles.container}>
@@ -63,17 +75,15 @@ export default function Turmas() {
       />
 
       {/* Estatísticas */}
-      <Card>
-        <div className={styles.stats}>
-          <Estatistica label="Turmas Ativas" valor="turmas.length" />
-          <Estatistica label="Total de Vagas" valor="totalVagas" />
-          <Estatistica label="Vagas Ocupadas" valor="vagasOcupadas" />
-          <Estatistica
-            label="Vagas Disponíveis"
-            valor="totalVagas - vagasOcupadas"
-          />
-        </div>
-      </Card>
+      <div className={styles.stats}>
+        <Estatistica label="Turmas Ativas" valor="turmas.length" />
+        <Estatistica label="Total de Vagas" valor="totalVagas" />
+        <Estatistica label="Vagas Ocupadas" valor="vagasOcupadas" />
+        <Estatistica
+          label="Vagas Disponíveis"
+          valor="totalVagas - vagasOcupadas"
+        />
+      </div>
 
       {/* Busca */}
       <Card>
@@ -86,7 +96,7 @@ export default function Turmas() {
         </div>
       </Card>
 
-      {/* Lista de turmas */}
+      {/* Lista */}
       <div className={styles.lista}>
         {turmas.map((turma) => {
           const percentual = Math.round(
@@ -96,7 +106,6 @@ export default function Turmas() {
           return (
             <Card key={turma.id}>
               <div className={styles.turmaCard}>
-                {/* Info principal */}
                 <div className={styles.info}>
                   <h3>{turma.disciplina}</h3>
 
@@ -112,7 +121,6 @@ export default function Turmas() {
                   </div>
                 </div>
 
-                {/* Vagas */}
                 <div className={styles.vagas}>
                   <strong>
                     {turma.ocupadas}/{turma.total}
@@ -127,10 +135,7 @@ export default function Turmas() {
                   </div>
                 </div>
 
-                {/* Ações */}
-                <div className={styles.acoes}>
-                  ✏️ 🗑️
-                </div>
+                <div className={styles.acoes}>✏️ 🗑️</div>
               </div>
             </Card>
           );

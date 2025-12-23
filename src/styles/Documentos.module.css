@@ -1,0 +1,181 @@
+.container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(135deg, #ecfdf5, #dcfce7);
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.headerIcon {
+  width: 44px;
+  height: 44px;
+  background: #16a34a;
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.header p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ===== STATS ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+  border-left: 5px solid;
+}
+
+.total {
+  border-color: #16a34a;
+}
+.aprovados {
+  border-color: #2563eb;
+}
+.pendentes {
+  border-color: #f59e0b;
+}
+.mes {
+  border-color: #9333ea;
+}
+
+.statCard span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.statCard strong {
+  font-size: 26px;
+}
+
+/* ===== BUSCA ===== */
+.buscaArea {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.busca {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.busca input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.uploadBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ===== FILTROS ===== */
+.filtros {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filtros span {
+  background: #dcfce7;
+  color: #166534;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ===== TABELA ===== */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela thead {
+  background: #16a34a;
+  color: #fff;
+}
+
+.tabela th,
+.tabela td {
+  padding: 14px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.tabela tbody tr:nth-child(even) {
+  background: #f0fdf4;
+}
+
+.docNome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== STATUS ===== */
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.aprovado {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pendente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.emanálise {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+/* ===== AÇÕES ===== */
+.acoes {
+  display: flex;
+  gap: 12px;
+  color: #16a34a;
+  cursor: pointer;
+}
