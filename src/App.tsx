@@ -9,7 +9,7 @@ import Documento from "./pages/Documento";
 import Disciplina from "./pages/Disciplina";
 import Turma from "./pages/Turma";
 import Curso from "./pages/Curso";
-import Avaliacao from "./pages/Avaliacao";
+import Avaliacao from "./pages/Avaliacoes";
 import Pagamento from "./pages/Pagamento";
 import Matricula from "./pages/Matricula";
 import Faculdades from "./pages/Faculdades";

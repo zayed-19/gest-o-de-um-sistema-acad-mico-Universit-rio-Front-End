@@ -64,8 +64,6 @@ export default function Turmas() {
     },
   ];
 
-  const totalVagas = turmas.reduce((a, t) => a + t.total, 0);
-  const vagasOcupadas = turmas.reduce((a, t) => a + t.ocupadas, 0);
 
   return (
     <section className={styles.container}>
@@ -131,7 +129,7 @@ export default function Turmas() {
                     <div
                       className={styles.progressBar}
                       style={{ width: `${percentual}%` }}
-                    />
+                    ></div>
                   </div>
                 </div>
 
