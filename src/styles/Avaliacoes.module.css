@@ -1,0 +1,158 @@
+.container {
+  padding: 32px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+}
+.header {
+  margin-bottom: 32px;
+}
+.estatisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.filtro {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  margin-bottom: 28px;
+}
+
+.buscaWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.buscaIcone {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.busca {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.busca:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+}
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+.info {
+  display: flex;
+  gap: 18px;
+  flex: 1;
+}
+
+.icone {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #fee2e2;
+  color: #dc2626;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+.detalhes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+.item {
+  font-size: 13px;
+  color: #374151;
+}
+
+.item strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.agendada {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.correcao {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.concluida {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.prova {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.trabalho {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.seminario {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 160px;
+}
