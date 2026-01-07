@@ -1,8 +1,6 @@
 import styles from "../styles/Turmas.module.css";
-import Titulo from "../components/Titulo";
+import { Search, Users, Plus } from "lucide-react";
 import Card from "../components/Card";
-import Botao from "../components/Botao";
-import Estatistica from "../components/Estatistica";
 
 interface Turma {
   id: number;
@@ -64,42 +62,62 @@ export default function Turmas() {
     },
   ];
 
-
   return (
     <section className={styles.container}>
-      <Titulo
-        texto="Gestão de Turmas"
-        subtitulo="Organize e acompanhe as turmas ativas"
-      />
+      {/* Cabeçalho */}
+      <div className={styles.headerPage}>
+        <div className={styles.headerIcon}>
+          <Users size={22} />
+        </div>
+        <div className={styles.headerText}>
+          <h1>Turmas</h1>
+          <p>Gerencie as turmas na instituição</p>
+        </div>
+      </div>
 
       {/* Estatísticas */}
-      <div className={styles.stats}>
-        <Estatistica label="Turmas Ativas" valor="turmas.length" />
-        <Estatistica label="Total de Vagas" valor="totalVagas" />
-        <Estatistica label="Vagas Ocupadas" valor="vagasOcupadas" />
-        <Estatistica
-          label="Vagas Disponíveis"
-          valor="totalVagas - vagasOcupadas"
-        />
+      <div className={styles.statsResumo}>
+        <div className={`${styles.statCard} ${styles.total}`}>
+          <h4>Total de Alunos</h4>
+          <strong>{Turmas.length}</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.cursos}`}>
+          <h4>Cursos Ativos</h4>
+          <strong>4</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.disciplinas}`}>
+          <h4>Disciplinas Cursadas</h4>
+          <strong>18</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.ativos}`}>
+          <h4>Alunos Ativos</h4>
+          <strong>3</strong>
+        </div>
       </div>
 
       {/* Busca */}
-      <Card>
+      <div className={styles.buscaCard}>
         <div className={styles.busca}>
+          <Search size={18} />
           <input
             type="text"
-            placeholder="Buscar turma por código, disciplina ou professor..."
+            placeholder="Buscar turma por disciplina, código ou professor..."
           />
-          <Botao texto="+ Nova Turma" />
         </div>
-      </Card>
+
+        <button className={styles.novoBtn}>
+          <Plus size={18} />
+          Novo Aluno
+        </button>
+      </div>
 
       {/* Lista */}
       <div className={styles.lista}>
         {turmas.map((turma) => {
-          const percentual = Math.round(
-            (turma.ocupadas / turma.total) * 100
-          );
+          const percentual = Math.round((turma.ocupadas / turma.total) * 100);
 
           return (
             <Card key={turma.id}>

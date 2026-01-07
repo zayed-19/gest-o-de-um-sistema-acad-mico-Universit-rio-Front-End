@@ -1,72 +1,174 @@
 import styles from "../styles/Aluno.module.css";
-import Titulo from "../components/Titulo";
 import Card from "../components/Card";
-import Botao from "../components/Botao";
-import Estatistica from "../components/Estatistica";
+import { Search, Plus, Users } from "lucide-react";
 
 export default function Aluno() {
+  const alunos = [
+    {
+      matricula: "2023001",
+      nome: "Carlos Eduardo Rocha",
+      curso: "Engenharia de Software",
+      semestre: "3º Semestre",
+      disciplinas: 5,
+      status: "Ativo",
+    },
+    {
+      matricula: "2023002",
+      nome: "Ana Paula Mendes",
+      curso: "Direito",
+      semestre: "5º Semestre",
+      disciplinas: 4,
+      status: "Ativo",
+    },
+    {
+      matricula: "2023003",
+      nome: "João Victor Silva",
+      curso: "Administração",
+      semestre: "2º Semestre",
+      disciplinas: 6,
+      status: "Ativo",
+    },
+    {
+      matricula: "2023004",
+      nome: "Mariana Costa Lopes",
+      curso: "Psicologia",
+      semestre: "7º Semestre",
+      disciplinas: 3,
+      status: "Trancado",
+    },
+  ];
+
   return (
     <section className={styles.container}>
-      <Titulo texto="Gestão de Alunos" />
-
-      {/* Estatísticas */}
-      <Card>
-        <div className={styles.stats}>
-          <Estatistica label="Total de Alunos" valor="5" />
-          <Estatistica label="Ativos" valor="5" />
-          <Estatistica label="Novos este mês" valor="12" />
-          <Estatistica label="Formandos" valor="8" />
+      {/* Cabeçalho */}
+      <div className={styles.headerPage}>
+        <div className={styles.headerIcon}>
+          <Users size={22} />
         </div>
-      </Card>
+        <div className={styles.headerText}>
+          <h1>Alunos</h1>
+          <p>Gerencie os alunos matriculados na instituição</p>
+        </div>
+      </div>
 
-      {/* Barra de busca */}
-      <Card>
+      {/* Estatísticas gerais */}
+      <div className={styles.statsResumo}>
+        <div className={`${styles.statCard} ${styles.total}`}>
+          <h4>Total de Alunos</h4>
+          <strong>{alunos.length}</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.cursos}`}>
+          <h4>Cursos Ativos</h4>
+          <strong>4</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.disciplinas}`}>
+          <h4>Disciplinas Cursadas</h4>
+          <strong>18</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.ativos}`}>
+          <h4>Alunos Ativos</h4>
+          <strong>3</strong>
+        </div>
+      </div>
+
+      {/* Busca */}
+      <div className={styles.buscaCard}>
         <div className={styles.busca}>
+          <Search size={18} />
           <input
             type="text"
             placeholder="Buscar aluno por nome, matrícula ou curso..."
           />
-          <Botao texto="+ Novo Aluno" />
         </div>
-      </Card>
 
-      {/* Tabela de alunos */}
+        <button className={styles.novoBtn}>
+          <Plus size={18} />
+          Novo Aluno
+        </button>
+      </div>
+
+      {/* Grid de alunos */}
       <Card>
         <table className={styles.tabela}>
           <thead>
             <tr>
+              <th>Aluno</th>
               <th>Matrícula</th>
-              <th>Nome</th>
-              <th>Curso</th>
-              <th>Período</th>
-              <th>Contato</th>
-              <th>Ações</th>
+              <th>Valor</th>
+              <th>Vencimento</th>
+              <th>Status</th>
+              <th>Pagamento</th>
+              <th>Método</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
-              <td>2024001</td>
               <td>Ana Silva Santos</td>
-              <td>Engenharia de Software</td>
-              <td>4º</td>
+              <td>2024001</td>
+              <td className={styles.valor}>Kz 1.250,00</td>
+              <td>10/12/2024</td>
               <td>
-                ana.silva@email.com<br />
-                (11) 98765-4321
+                <span className={`${styles.status} ${styles.pago}`}>Pago</span>
               </td>
-              <td>✏️ 🗑️</td>
+              <td>08/12/2024</td>
+              <td>Express</td>
             </tr>
+
             <tr>
-              <td>2024002</td>
               <td>Carlos Eduardo Lima</td>
-              <td>Administração</td>
-              <td>2º</td>
+              <td>2024002</td>
+              <td className={styles.valor}>Kz 980,00</td>
+              <td>10/12/2024</td>
               <td>
-                carlos.lima@email.com<br />
-                (21) 97654-3210
+                <span className={`${styles.status} ${styles.pendente}`}>
+                  Pendente
+                </span>
               </td>
-              <td>✏️ 🗑️</td>
+              <td>-</td>
+              <td>-</td>
             </tr>
-            {/* ... demais alunos */}
+
+            <tr>
+              <td>Beatriz Oliveira Costa</td>
+              <td>2024003</td>
+              <td className={styles.valor}>Kz 1.450,00</td>
+              <td>10/12/2024</td>
+              <td>
+                <span className={`${styles.status} ${styles.pago}`}>Pago</span>
+              </td>
+              <td>05/12/2024</td>
+              <td>Cartão de Crédito</td>
+            </tr>
+
+            <tr>
+              <td>Daniel Ferreira Souza</td>
+              <td>2024004</td>
+              <td className={styles.valor}>Kz 2.100,00</td>
+              <td>05/12/2024</td>
+              <td>
+                <span className={`${styles.status} ${styles.atrasado}`}>
+                  Atrasado
+                </span>
+              </td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+
+            <tr>
+              <td>Fernanda Martins Rocha</td>
+              <td>2024005</td>
+              <td className={styles.valor}>Kz 1.180,00</td>
+              <td>10/12/2024</td>
+              <td>
+                <span className={`${styles.status} ${styles.pago}`}>Pago</span>
+              </td>
+              <td>09/12/2024</td>
+              <td>Boleto</td>
+            </tr>
           </tbody>
         </table>
       </Card>

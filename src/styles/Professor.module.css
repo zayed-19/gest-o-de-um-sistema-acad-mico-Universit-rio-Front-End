@@ -1,73 +1,202 @@
+/* ===== Página ===== */
 .container {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(135deg, #eef2ff, #e0e7ff 40%, #f4f4f7);
-  min-height: 100vh;
-  font-family: "Inter", sans-serif;
-  font-size: 13px;
-}
-
-.content {
   width: 100%;
-  max-width: 1600px;
   padding: 24px;
+  background-color: #f9fdff;
+  font-size: 14px;
 }
 
-.header {
+/* ===== Cabeçalho ===== */
+.headerPage {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-.newButton {
-  background: #4f46e5;
-  color: white;
+.headerIcon {
+  background-color: #b264bd;
+  color: #fff;
+  padding: 14px;
+  border-radius: 14px;
+}
+
+.headerText h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ab43b8;
+}
+
+.headerText p {
+  font-size: 14px;
+  color: #ab43b8;
+}
+
+/* ===== Estatísticas ===== */
+.statsResumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid;
+}
+
+.statCard h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.statCard strong {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Cores dos cards */
+.total {
+  border-color: #b930d1;
+  color: #ab43b8;
+}
+.cursos {
+  border-color: #2563eb;
+  color: #1e40af;
+}
+.disciplinas {
+  border-color: #16a34a;
+  color: #065f46;
+}
+.ativos {
+  border-color: #e9862f;
+  color: #c46521;
+}
+
+/* ===== Barra de busca ===== */
+.buscaCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.busca {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.busca input {
   border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 12px;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.novoBtn {
+  background-color: #ab43b8;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
 }
 
-.summary {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 16px;
-  font-weight: 500;
+.novoBtn:hover {
+  background-color: #b228b9;
 }
 
-.search {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-  font-size: 12px;
-}
-
-.cards {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
 }
 
-.card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  position: relative;
+/* ===== Card do Professor (estilo roxo) ===== */
+
+.profCard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
 }
 
-.sigla {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: #4f46e5;
+/* Cabeçalho roxo */
+.profHeader {
+  background: linear-gradient(135deg, #6a0dad, #9b59b6);
   color: white;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profInitials {
+  font-size: 22px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Ações */
+.profActions svg {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.profEdit {
+  color: #f1c40f;
+}
+
+.profDelete {
+  color: #e74c3c;
+}
+
+/* Corpo */
+.profBody {
+  padding: 16px;
+}
+
+.profName {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.profTitle,
+.profArea,
+.profEmail {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* Estatísticas */
+.profStats {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
 }
