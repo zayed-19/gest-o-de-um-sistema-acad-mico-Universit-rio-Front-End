@@ -1,4 +1,4 @@
-/* Container geral */
+/* Container principal */
 .containerlogin {
   min-height: 100vh;
   width: 100%;
@@ -9,7 +9,7 @@
   font-family: "Inter", system-ui, sans-serif;
 }
 
-/* Card do login */
+/* Card do formulário */
 .cardtext {
   width: 100%;
   max-width: 420px;
@@ -19,12 +19,12 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 /* Título */
 .cardtext h1 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: #1f2937;
   text-align: center;
@@ -35,7 +35,7 @@
   font-size: 14px;
   color: #6b7280;
   text-align: center;
-  margin-top: -10px;
+  margin-top: -8px;
 }
 
 /* Mensagem de erro */
@@ -48,7 +48,7 @@
   text-align: center;
 }
 
-/* Grupo de input com ícone */
+/* Grupo de input */
 .inputGroup {
   display: flex;
   align-items: center;
@@ -60,14 +60,7 @@
   transition: all 0.2s ease;
 }
 
-/* Hover e foco */
-.inputGroup:focus-within {
-  background: #ffffff;
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-}
-
-/* Ícones */
+/* Ícone */
 .inputGroup svg {
   color: #6b7280;
 }
@@ -86,9 +79,16 @@
   color: #9ca3af;
 }
 
-/* Botão */
+/* Foco */
+.inputGroup:focus-within {
+  background: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Botão principal */
 .cardtext button {
-  margin-top: 8px;
+  margin-top: 6px;
   height: 46px;
   border: none;
   border-radius: 10px;
@@ -111,7 +111,7 @@
   box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 480px) {
   .cardtext {
     margin: 16px;
