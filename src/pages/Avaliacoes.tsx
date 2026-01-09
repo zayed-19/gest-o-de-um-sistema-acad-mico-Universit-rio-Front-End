@@ -15,7 +15,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-
+                                                                
 export default function Avaliacoes() {
   return (
     <section className={styles.container}>
