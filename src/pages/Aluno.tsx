@@ -1,6 +1,6 @@
 import styles from "../styles/Aluno.module.css";
 import Card from "../components/Card";
-import { Search, Plus, Users } from "lucide-react";
+import { Search, Plus, Users, Pencil, Trash2 } from "lucide-react";
 
 export default function Aluno() {
   const alunos = [
@@ -97,11 +97,10 @@ export default function Aluno() {
             <tr>
               <th>Aluno</th>
               <th>Matrícula</th>
-              <th>Valor</th>
-              <th>Vencimento</th>
-              <th>Status</th>
-              <th>Pagamento</th>
-              <th>Método</th>
+              <th>Curso</th>
+              <th>Período</th>
+              <th>Contacto</th>
+              <th>Ações</th>
             </tr>
           </thead>
 
@@ -112,10 +111,16 @@ export default function Aluno() {
               <td className={styles.valor}>Kz 1.250,00</td>
               <td>10/12/2024</td>
               <td>
-                <span className={`${styles.status} ${styles.pago}`}>Pago</span>
+                {" "}
+                carlos.lima@email.com
+                <p>(21) 97654-3210</p>
               </td>
-              <td>08/12/2024</td>
-              <td>Express</td>
+              <td>
+                <div className={styles.acoes}>
+                  <Pencil size={18} className={styles.editar} />
+                  <Trash2 size={18} className={styles.excluir} />
+                </div>
+              </td>
             </tr>
 
             <tr>
@@ -124,12 +129,16 @@ export default function Aluno() {
               <td className={styles.valor}>Kz 980,00</td>
               <td>10/12/2024</td>
               <td>
-                <span className={`${styles.status} ${styles.pendente}`}>
-                  Pendente
-                </span>
+                {" "}
+                carlos.lima@email.com
+                <p>(21) 97654-3210</p>
               </td>
-              <td>-</td>
-              <td>-</td>
+              <td>
+                <div className={styles.acoes}>
+                  <Pencil size={18} className={styles.editar} />
+                  <Trash2 size={18} className={styles.excluir} />
+                </div>
+              </td>
             </tr>
 
             <tr>
@@ -138,10 +147,16 @@ export default function Aluno() {
               <td className={styles.valor}>Kz 1.450,00</td>
               <td>10/12/2024</td>
               <td>
-                <span className={`${styles.status} ${styles.pago}`}>Pago</span>
+                {" "}
+                beatriz.costa@email.com
+                <p>(31) 96543-2109</p>
               </td>
-              <td>05/12/2024</td>
-              <td>Cartão de Crédito</td>
+              <td>
+                <div className={styles.acoes}>
+                  <Pencil size={18} className={styles.editar} />
+                  <Trash2 size={18} className={styles.excluir} />
+                </div>
+              </td>
             </tr>
 
             <tr>
@@ -150,12 +165,16 @@ export default function Aluno() {
               <td className={styles.valor}>Kz 2.100,00</td>
               <td>05/12/2024</td>
               <td>
-                <span className={`${styles.status} ${styles.atrasado}`}>
-                  Atrasado
-                </span>
+                {" "}
+                carlos.lima@email.com
+                <p>(21) 97654-3210</p>
               </td>
-              <td>-</td>
-              <td>-</td>
+              <td>
+                <div className={styles.acoes}>
+                  <Pencil size={18} className={styles.editar} />
+                  <Trash2 size={18} className={styles.excluir} />
+                </div>
+              </td>
             </tr>
 
             <tr>
@@ -164,10 +183,16 @@ export default function Aluno() {
               <td className={styles.valor}>Kz 1.180,00</td>
               <td>10/12/2024</td>
               <td>
-                <span className={`${styles.status} ${styles.pago}`}>Pago</span>
+                {" "}
+                ana.silva@email.com
+                <p>(11) 98765-4321</p>
               </td>
-              <td>09/12/2024</td>
-              <td>Boleto</td>
+              <td>
+                <div className={styles.acoes}>
+                  <Pencil size={18} className={styles.editar} />
+                  <Trash2 size={18} className={styles.excluir} />
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>

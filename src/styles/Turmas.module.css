@@ -107,7 +107,7 @@
 }
 
 .novoBtn {
-  background-color: #75a3e7;
+  background-color: #e66dbe;
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -117,10 +117,11 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  width: fit-content;
 }
 
 .novoBtn:hover {
-  background-color: #289cb9;
+  background-color: #da239d;
 }
 
 /* ===== LISTA ===== */

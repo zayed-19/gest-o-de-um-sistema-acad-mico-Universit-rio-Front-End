@@ -110,7 +110,7 @@ export default function Turmas() {
 
         <button className={styles.novoBtn}>
           <Plus size={18} />
-          Novo Aluno
+          Nova Turma
         </button>
       </div>
 
