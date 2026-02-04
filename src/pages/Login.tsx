@@ -2,11 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/login.module.css";
 import { Mail, Lock, LogIn, UserPlus } from "lucide-react";
-
-type Usuario = {
-  email: string;
-  senha: string;
-};
+import { login, register } from "../services/authService";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -16,45 +12,29 @@ export default function Login() {
   const [modo, setModo] = useState<"login" | "cadastro">("login");
   const [erro, setErro] = useState("");
 
-  function getUsuarios(): Usuario[] {
-    return JSON.parse(localStorage.getItem("usuarios") || "[]");
-  }
-
-  function salvarUsuarios(usuarios: Usuario[]) {
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-  }
-
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setErro("");
 
-    const usuarios = getUsuarios();
-
-    if (modo === "cadastro") {
-      const existe = usuarios.find((u) => u.email === email);
-      if (existe) {
-        setErro("Este email já está cadastrado");
+    try {
+      // CADASTRO
+      if (modo === "cadastro") {
+        await register({ email, senha });
+        alert("Cadastro realizado com sucesso!");
+        setModo("login");
         return;
       }
 
-      usuarios.push({ email, senha });
-      salvarUsuarios(usuarios);
-      alert("Cadastro realizado com sucesso!");
-      setModo("login");
-      return;
+      // LOGIN
+      const usuario = await login({ email, senha });
+
+      // salva apenas o ID do usuário
+      localStorage.setItem("usuarioId", usuario.id);
+
+      navigate("/app");
+    } catch (error: unknown) {
+      setErro(error instanceof Error ? error.message : "Erro desconhecido");
     }
-
-    // LOGIN
-    const usuario = usuarios.find(
-      (u) => u.email === email && u.senha === senha
-    );
-
-    if (!usuario) {
-      setErro("Email ou senha inválidos");
-      return;
-    }
-
-    navigate("/app");
   }
 
   return (
@@ -103,9 +83,7 @@ export default function Login() {
             color: "#4f46e5",
             cursor: "pointer",
           }}
-          onClick={() =>
-            setModo(modo === "login" ? "cadastro" : "login")
-          }
+          onClick={() => setModo(modo === "login" ? "cadastro" : "login")}
         >
           {modo === "login"
             ? "Não tem conta? Cadastre-se"
