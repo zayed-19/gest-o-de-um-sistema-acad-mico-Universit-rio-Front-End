@@ -108,8 +108,8 @@ export default function Aluno() {
             <tr>
               <td>Ana Silva Santos</td>
               <td>2024001</td>
-              <td className={styles.valor}>Kz 1.250,00</td>
-              <td>10/12/2024</td>
+              <td>Engenharia de Software</td>
+              <td>4º</td>
               <td>
                 {" "}
                 carlos.lima@email.com
@@ -126,8 +126,8 @@ export default function Aluno() {
             <tr>
               <td>Carlos Eduardo Lima</td>
               <td>2024002</td>
-              <td className={styles.valor}>Kz 980,00</td>
-              <td>10/12/2024</td>
+              <td>Administração</td>
+              <td>2º</td>
               <td>
                 {" "}
                 carlos.lima@email.com
@@ -144,8 +144,8 @@ export default function Aluno() {
             <tr>
               <td>Beatriz Oliveira Costa</td>
               <td>2024003</td>
-              <td className={styles.valor}>Kz 1.450,00</td>
-              <td>10/12/2024</td>
+              <td>Direito</td>
+              <td>6º</td>
               <td>
                 {" "}
                 beatriz.costa@email.com
@@ -162,8 +162,8 @@ export default function Aluno() {
             <tr>
               <td>Daniel Ferreira Souza</td>
               <td>2024004</td>
-              <td className={styles.valor}>Kz 2.100,00</td>
-              <td>05/12/2024</td>
+              <td>Medicina</td>
+              <td>5º</td>
               <td>
                 {" "}
                 carlos.lima@email.com
@@ -180,8 +180,8 @@ export default function Aluno() {
             <tr>
               <td>Fernanda Martins Rocha</td>
               <td>2024005</td>
-              <td className={styles.valor}>Kz 1.180,00</td>
-              <td>10/12/2024</td>
+              <td>Psicologia</td>
+              <td>3º</td>
               <td>
                 {" "}
                 ana.silva@email.com
