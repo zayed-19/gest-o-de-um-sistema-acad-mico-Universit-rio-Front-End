@@ -8,7 +8,7 @@ import type { Historico_matricula } from "./Historico_matricula";
 export interface Aluno {
   id?: number;
   nome: string;
-  DataNasc: Date;
+  dataNasc: Date;
   morada: string;
   genero: string;
   telefone: number;

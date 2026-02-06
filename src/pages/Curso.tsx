@@ -1,18 +1,16 @@
 import styles from "../styles/Cursos.module.css";
-import Titulo from "../components/Titulo";
+
 import Card from "../components/Card";
-import Botao from "../components/Botao";
-import Estatistica from "../components/Estatistica";
 
 import {
   Search,
   Plus,
-  GraduationCap,
   Users,
   BookOpen,
   Clock,
   Edit,
   Trash2,
+  UserCog,
 } from "lucide-react";
 
 type Curso = {
@@ -52,34 +50,55 @@ export default function Cursos() {
 
   return (
     <section className={styles.container}>
-      <Titulo
-        texto="Cursos Oferecidos"
-        subtitulo="Gerencie os cursos da instituição"
-        icone={<GraduationCap />}
-      />
-
-      {/* Estatísticas */}
-      <div className={styles.stats}>
-        <Estatistica label="Total de Cursos" valor="5" />
-        <Estatistica label="Total de Alunos" valor="820" tipo="success" />
-        <Estatistica label="Disciplinas" valor="251" tipo="warning" />
-        <Estatistica label="Coordenadores" valor="5" />
+      {/* Cabeçalho */}
+      <div className={styles.headerPage}>
+        <div className={styles.headerIcon}>
+          <UserCog size={22} />
+        </div>
+        <div className={styles.headerText}>
+          <h1>Cursos</h1>
+          <p>Gerencie cursos e as suas atribuições</p>
+        </div>
       </div>
 
-      {/* Busca */}
-      <Card>
-        <div className={styles.busca}>
-          <div className={styles.search}>
-            <Search size={18} />
-            <input
-              type="text"
-              placeholder="Buscar curso por nome, coordenador ou nível..."
-            />
-          </div>
-
-          <Botao texto="+ Novo Curso" icone={<Plus size={18} />} />
+      {/* Estatísticas gerais */}
+      <div className={styles.statsResumo}>
+        <div className={`${styles.statCard} ${styles.total}`}>
+          <h4>Total de Cursos</h4>
+          <strong>{cursos.length}</strong>
         </div>
-      </Card>
+
+        <div className={`${styles.statCard} ${styles.disciplinas}`}>
+          <h4>Total de cursos</h4>
+          <strong>988</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.alunos}`}>
+          <h4>Disciplinas</h4>
+          <strong>50</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.ativos}`}>
+          <h4>Coordenadores</h4>
+          <strong>3</strong>
+        </div>
+      </div>
+
+      {/* Barra de busca */}
+      <div className={styles.buscaCard}>
+        <div className={styles.busca}>
+          <Search size={18} />
+          <input
+            type="text"
+            placeholder="Buscar professor por nome, registro ou área..."
+          />
+        </div>
+
+        <button className={styles.novoBtn}>
+          <Plus size={18} />
+          Novo Professor
+        </button>
+      </div>
 
       {/* Cursos */}
       <div className={styles.lista}>

@@ -1,8 +1,14 @@
+import { useState } from "react";
 import styles from "../styles/Aluno.module.css";
 import Card from "../components/Card";
 import { Search, Plus, Users, Pencil, Trash2 } from "lucide-react";
+import { AlunoForm } from "../components/AlunoForm";
+import { AlunoList } from "../components/AlunoList";
 
 export default function Aluno() {
+  const [abrirModal, setAbrirModal] = useState(false);
+  const [refresh, setRefresh] = useState(0);
+
   const alunos = [
     {
       matricula: "2023001",
@@ -51,7 +57,7 @@ export default function Aluno() {
         </div>
       </div>
 
-      {/* Estatísticas gerais */}
+      {/* Estatísticas */}
       <div className={styles.statsResumo}>
         <div className={`${styles.statCard} ${styles.total}`}>
           <h4>Total de Alunos</h4>
@@ -84,13 +90,13 @@ export default function Aluno() {
           />
         </div>
 
-        <button className={styles.novoBtn}>
+        <button className={styles.novoBtn} onClick={() => setAbrirModal(true)}>
           <Plus size={18} />
           Novo Aluno
         </button>
       </div>
 
-      {/* Grid de alunos */}
+      {/* Tabela de alunos fictícios */}
       <Card>
         <table className={styles.tabela}>
           <thead>
@@ -105,98 +111,58 @@ export default function Aluno() {
           </thead>
 
           <tbody>
-            <tr>
-              <td>Ana Silva Santos</td>
-              <td>2024001</td>
-              <td>Engenharia de Software</td>
-              <td>4º</td>
-              <td>
-                {" "}
-                carlos.lima@email.com
-                <p>(21) 97654-3210</p>
-              </td>
-              <td>
-                <div className={styles.acoes}>
-                  <Pencil size={18} className={styles.editar} />
-                  <Trash2 size={18} className={styles.excluir} />
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Carlos Eduardo Lima</td>
-              <td>2024002</td>
-              <td>Administração</td>
-              <td>2º</td>
-              <td>
-                {" "}
-                carlos.lima@email.com
-                <p>(21) 97654-3210</p>
-              </td>
-              <td>
-                <div className={styles.acoes}>
-                  <Pencil size={18} className={styles.editar} />
-                  <Trash2 size={18} className={styles.excluir} />
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Beatriz Oliveira Costa</td>
-              <td>2024003</td>
-              <td>Direito</td>
-              <td>6º</td>
-              <td>
-                {" "}
-                beatriz.costa@email.com
-                <p>(31) 96543-2109</p>
-              </td>
-              <td>
-                <div className={styles.acoes}>
-                  <Pencil size={18} className={styles.editar} />
-                  <Trash2 size={18} className={styles.excluir} />
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Daniel Ferreira Souza</td>
-              <td>2024004</td>
-              <td>Medicina</td>
-              <td>5º</td>
-              <td>
-                {" "}
-                carlos.lima@email.com
-                <p>(21) 97654-3210</p>
-              </td>
-              <td>
-                <div className={styles.acoes}>
-                  <Pencil size={18} className={styles.editar} />
-                  <Trash2 size={18} className={styles.excluir} />
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Fernanda Martins Rocha</td>
-              <td>2024005</td>
-              <td>Psicologia</td>
-              <td>3º</td>
-              <td>
-                {" "}
-                ana.silva@email.com
-                <p>(11) 98765-4321</p>
-              </td>
-              <td>
-                <div className={styles.acoes}>
-                  <Pencil size={18} className={styles.editar} />
-                  <Trash2 size={18} className={styles.excluir} />
-                </div>
-              </td>
-            </tr>
+            {alunos.map((aluno, index) => (
+              <tr key={index}>
+                <td>{aluno.nome}</td>
+                <td>{aluno.matricula}</td>
+                <td>{aluno.curso}</td>
+                <td>{aluno.semestre}</td>
+                <td>
+                  email@exemplo.com
+                  <p>(99) 99999-9999</p>
+                </td>
+                <td>
+                  <div className={styles.acoes}>
+                    <Pencil size={18} className={styles.editar} />
+                    <Trash2 size={18} className={styles.excluir} />
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </Card>
+
+      {/* Lista REAL do backend */}
+      <Card>
+        <h3 style={{ marginBottom: "10px" }}>Alunos Cadastrados</h3>
+        <AlunoList refresh={refresh} />
+      </Card>
+
+      {/* Modal com botão SAIR */}
+      {abrirModal && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <h2>Novo Aluno</h2>
+
+              <button
+                className={styles.btnSair}
+                onClick={() => setAbrirModal(false)}
+              >
+                Sair
+              </button>
+            </div>
+
+            <AlunoForm
+              onAlunoAdded={() => {
+                setAbrirModal(false);
+                setRefresh(refresh + 1);
+              }}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

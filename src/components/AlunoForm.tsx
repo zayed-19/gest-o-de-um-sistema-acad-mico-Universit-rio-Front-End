@@ -8,7 +8,7 @@ interface Props {
 
 interface AlunoFormData {
   nome: string;
-  DataNasc: string;
+  dataNasc: string; // <-- corrigido
   morada: string;
   genero: string;
   telefone: number;
@@ -19,7 +19,7 @@ interface AlunoFormData {
 export function AlunoForm({ onAlunoAdded }: Props) {
   const [form, setForm] = useState<AlunoFormData>({
     nome: "",
-    DataNasc: "",
+    dataNasc: "",
     morada: "",
     genero: "",
     telefone: 0,
@@ -46,14 +46,14 @@ export function AlunoForm({ onAlunoAdded }: Props) {
 
     await createAluno({
       ...form,
-      DataNasc: new Date(form.DataNasc),
+      dataNasc: new Date(form.dataNasc),
     });
 
     onAlunoAdded();
 
     setForm({
       nome: "",
-      DataNasc: "",
+      dataNasc: "",
       morada: "",
       genero: "",
       telefone: 0,
@@ -79,9 +79,9 @@ export function AlunoForm({ onAlunoAdded }: Props) {
 
       <TextField
         label="Data de Nascimento"
-        name="DataNasc"
+        name="dataNasc"
         type="date"
-        value={form.DataNasc}
+        value={form.dataNasc}
         onChange={handleChange}
         fullWidth
         required
@@ -148,7 +148,7 @@ export function AlunoForm({ onAlunoAdded }: Props) {
       />
 
       <Button type="submit" variant="contained" sx={{ mt: 2 }}>
-        Cadastrar
+        Cadastrar Aluno
       </Button>
     </Box>
   );

@@ -1,55 +1,72 @@
 import styles from "../styles/Avaliacoes.module.css";
-
-import Titulo from "../components/Titulo";
 import Card from "../components/Card";
 import Botao from "../components/Botao";
-import Estatistica from "../components/Estatistica";
 
 import {
   ClipboardCheck,
-  Search,
-  Plus,
   Eye,
   Edit,
   Calendar,
   TrendingUp,
   Users,
+  Layers,
+  Search,
+  Plus,
 } from "lucide-react";
-                                                                
+
 export default function Avaliacoes() {
   return (
     <section className={styles.container}>
-      {/* TÍTULO */}
-      <Titulo
-        texto="Avaliações"
-        subtitulo="Gerencie provas, trabalhos e atividades avaliativas"
-        icone={<ClipboardCheck size={18} />}
-      />
-
-      {/* ESTATÍSTICAS */}
-      <div className={styles.estatisticas}>
-        <Estatistica label="Total de Avaliações" valor="5" tipo="danger" />
-        <Estatistica label="Agendadas" valor="2" tipo="success" />
-        <Estatistica label="Em Correção" valor="1" tipo="warning" />
-        <Estatistica label="Concluídas" valor="1" tipo="success" />
+      {/* Cabeçalho */}
+      <div className={styles.headerPage}>
+        <div className={styles.headerIcon}>
+          <Layers size={22} />
+        </div>
+        <div className={styles.headerText}>
+          <h1>Avaliações</h1>
+          <p>
+            Gerencie as avaliações das disciplinas oferecidas pela instituição
+          </p>
+        </div>
       </div>
 
-      {/* BUSCA + BOTÃO */}
-      <Card className={styles.filtro}>
+      {/* Estatísticas gerais */}
+      <div className={styles.statsResumo}>
+        <div className={`${styles.statCard} ${styles.total}`}>
+          <h4>Total de Avaliações</h4>
+          <strong>12</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.carga}`}>
+          <h4>Agendadas</h4>
+          <strong>4</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.creditos}`}>
+          <h4>Em Correção</h4>
+          <strong>3</strong>
+        </div>
+
+        <div className={`${styles.statCard} ${styles.alunos}`}>
+          <h4>Concluídas</h4>
+          <strong>5</strong>
+        </div>
+      </div>
+
+      {/* Busca */}
+      <div className={styles.buscaCard}>
         <div className={styles.busca}>
           <Search size={18} />
           <input
             type="text"
-            placeholder="Buscar avaliação por título, disciplina ou turma..."
+            placeholder="Buscar avaliação por código, nome ou professor..."
           />
         </div>
-
-        <Botao
-          texto="+ Nova Avaliação"
-          icone={<Plus size={18} />}
-          variante="perigo"
-        />
-      </Card>
+        <button className={styles.novoBtn}>
+          <Plus size={18} />
+          Nova Avaliação
+        </button>
+      </div>
 
       {/* LISTA DE AVALIAÇÕES */}
       <div className={styles.lista}>
@@ -67,9 +84,7 @@ export default function Avaliacoes() {
                 </span>
               </div>
 
-              <p>
-                Algoritmos e Estruturas de Dados • ENG-2024-4A
-              </p>
+              <p>Algoritmos e Estruturas de Dados • ENG-2024-4A</p>
 
               <div className={styles.meta}>
                 <span>
@@ -93,11 +108,7 @@ export default function Avaliacoes() {
               variante="perigo"
               outline
             />
-            <Botao
-              texto="Editar"
-              icone={<Edit size={16} />}
-              outline
-            />
+            <Botao texto="Editar" icone={<Edit size={16} />} outline />
           </div>
         </Card>
 
@@ -116,9 +127,7 @@ export default function Avaliacoes() {
                 </span>
               </div>
 
-              <p>
-                Direito Constitucional • DIR-2024-6B
-              </p>
+              <p>Direito Constitucional • DIR-2024-6B</p>
 
               <div className={styles.meta}>
                 <span>
@@ -141,11 +150,7 @@ export default function Avaliacoes() {
               icone={<Eye size={16} />}
               variante="perigo"
             />
-            <Botao
-              texto="Editar"
-              icone={<Edit size={16} />}
-              outline
-            />
+            <Botao texto="Editar" icone={<Edit size={16} />} outline />
           </div>
         </Card>
       </div>
